@@ -11,7 +11,7 @@ declare class redis_cookie_store {
 
   findCookie(domain: string, path: string, cookieName: string, cb: (err: Error | null, cookie: Cookie | null) => void): void;
 
-  findCookies(domain: string, path: string, cb: (err: Error | null, cookie: Cookie[]) => void): void;
+  findCookies(domain: string, path: string, allowSpecialUseDomain: boolean, cb: (err: Error | null, cookie: Cookie[]) => void): void;
 
   getKeyName(domain: string, path: string): string;
 
