@@ -5,6 +5,8 @@ declare module "redis-cookie-store" {
 declare type Cookie = import('tough-cookie').Cookie;
 
 declare class redis_cookie_store {
+  synchronous: boolean;
+  
   constructor(redisClient: any, id: string);
 
   findCookie(domain: string, path: string, cookieName: string, cb: (err: Error | null, cookie: Cookie | null) => void): void;
